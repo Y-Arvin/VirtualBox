@@ -142,11 +142,11 @@ When trying to set a static ip for the Ubuntu machine the guide had a different 
 
 As i've now learned that the format has to be exact for each Ubuntu version as the guide was running an older ubuntu version. I obtained the format from <a href="https://Linuxconfig.org/setting-a-static-ip-address-in-ubuntu-24-04-via-the-command-line">here</a> to correctly configure the IP.
 
-<img src="https://i.imgur.com/orlYUfn.png" width="480"> <img src="https://i.imgur.com/8NVBgYI.png" width="500"> <br> <sup>Ref 22: Netplan guide IP format </sup> <br> <sup>Ref 23: Netplan IP format that worked for Ubuntu24.04 </sup>	
+<img src="https://i.imgur.com/orlYUfn.png" width="460"> <img src="https://i.imgur.com/8NVBgYI.png" width="480"> <br> <sup>Ref 22: Netplan guide IP format </sup> <br> <sup>Ref 23: Netplan IP format that worked for Ubuntu24.04 </sup>	
 
 **Windows 10 joining the Windows server domain due to DNS configuration** <br>
 Press the `Windows key + R` to open up run. Type in `ncpa.cpl` and press ok. Then right click and go into properties, click Internet Protocol Version 4. Change the DNS to point at the domain controller `192.168.10.7`.
 
-<img src="https://i.imgur.com/Wpk3Z0v.png" width="400"> <img src="https://i.imgur.com/ZRI4ds9.png" width="300"> <br> <sup>Ref 24: Issue with DNS  </sup>	
+<img src="https://i.imgur.com/Wpk3Z0v.png" width="380"> <img src="https://i.imgur.com/ZRI4ds9.png" width="280"> <br> <sup>Ref 24: Issue with DNS  </sup>	
 
 -------------------------------------------------------------------
