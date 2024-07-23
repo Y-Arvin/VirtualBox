@@ -124,7 +124,7 @@ Go to the computer name tab and click the box that says change. Click the radio 
 **Log on to the domain using a user account** <br>
 When you sign on it points to the domain we have created.`DOMAIN`
 
-<img src="https://i.imgur.com/3xuqS37.png" width="470"> <img src="https://i.imgur.com/DBeIxAB.png" width="500"> <br> <sup>Ref 20: Sign in to the domain with the user that has been created  </sup>	
+<img src="https://i.imgur.com/3xuqS37.png" width="270"> <img src="https://i.imgur.com/DBeIxAB.png" width="300"> <br> <sup>Ref 20: Sign in to the domain with the user that has been created  </sup>	
 
 **Allowing remote desktop connection for users** <br>
 On the Windows 10 VM right click the Windows icon at the bottom left and click on system. Scroll down to Advance System Settings, go to the remote tab, and click the checkbox and radio button at the bottom that says allow remote connections to this computer.
