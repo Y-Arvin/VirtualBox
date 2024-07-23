@@ -40,7 +40,8 @@ Open VirtualBox, press the new icon at the top and fill out the dialog box, sele
 On the tools tab in Virtualbox Manager click the three dots and select network. Go to the NAT networks tab and press green plus create at the top. Choose a name`ADproject` and input an IPv4 network with the CIDR.`192.168.10.0/24` based on Ref<sup>1</sup>.<br>
 Now attach the network to each VM by pressing the VM and then the yellow wheel settings icon at the top. Go to the network tab and in the dropdown box select `NAT NETWORK`; the name dropdown box should be the one created `ADproject`.
 
-<img src="https://i.imgur.com/gd8TgGh.png" width="320"> <img src="https://i.imgur.com/bqHnfTG.png" width="320"> <img src="https://i.imgur.com/XObxRIw.png" width="320"><br>
+<img src="https://i.imgur.com/gd8TgGh.png" width="380"> <img src="https://i.imgur.com/XObxRIw.png" width="300"><br>
+<img src="https://i.imgur.com/bqHnfTG.png" > <br>
 <sup>Ref 5: Create NAT network and attach to each VM </sup>	
 
 **Installation of Operating Systems** <br>
