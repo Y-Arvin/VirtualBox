@@ -12,7 +12,7 @@ The VirtualBox & Active Directory project aims to establish a controlled environ
 
 ### Tools Used
 
-- Hypervisor Software: [Oracle VM VirtualBox](https://www.virtualbox.org/wiki/Downloads) is used for the creation, management, and running of virtual machines on a host system.
+- Hypervisor Software: [Oracle VM VirtualBox](https://www.virtualbox.org/wiki/Downloads) Utilized for the creating, managing, and running virtual machines on a host system.
 - Operating System Images: [Windows 10 ISO](https://www.microsoft.com/en-ca/software-download/windows10), [Windows Server 2022 ISO](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022), [Ubuntu Server 24.04](https://ubuntu.com/download/server), and [Kali Linux](https://www.kali.org/get-kali/#kali-virtual-machines)
   
 ## Walkthrough
