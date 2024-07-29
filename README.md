@@ -117,7 +117,7 @@ Location the user within the domain, right-click the user and select reset passw
 
 If you don't know where the user is located you can use search. Right-click the domain and select find. 
 
-<img src="https://i.imgur.com/EYTIU48.png" width="500"><img src="https://i.imgur.com/C0J8oSu.png" width="500"> <br> <sup>Ref 18: Searching for user & resetting user password </sup>	
+<img src="https://i.imgur.com/EYTIU48.png" width="400"><img src="https://i.imgur.com/C0J8oSu.png" width="400"> <br> <sup>Ref 18: Searching for user & resetting user password </sup>	
 
 **Account lockout** <br>
 Open up Server Manager. Click the tools at the top and group policy management.
