@@ -74,7 +74,7 @@ Right-click the ethernet icon and click edit connections. Select Wired connectio
 **Setting up Active Directory on Windows Server** <br>
 Open up Server Manager. Select the manage tab at the top and click Add Roles And Features. In the installation type section make sure role-base is selected. In the server roles section check the box that says Active Directory Domain Services.
 
-<img src="https://i.imgur.com/PeyyZin.png" width="500"> <img src="https://i.imgur.com/l0eTiAD.png" width="465">
+<img src="https://i.imgur.com/PeyyZin.png" width="500"> <img src="https://i.imgur.com/l0eTiAD.png" width="465"> <br>
 <sup>Ref 10: Adding Active Directory Domain Services to server </sup>	
 
 **Promote to Domain Controller** <br>
