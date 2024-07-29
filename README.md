@@ -8,7 +8,7 @@ The VirtualBox & Active Directory project aims to establish a controlled environ
 
 - Virtualization Fundamentals: VM creation, ISO files, SHA256 integrity hash, and resource allocation.
 - Network Configuration: Configuring IP addresses, subnetting, and DNS settings within virtual networks.
-- System Administration: Installing and configuring operating systems (Windows 10, Windows Server, Ubuntu, and Kali Linux) on virtual machines. Adding & managing user accounts, permissions, and group policies such as resetting passwords, account lockout within virtualized environments, and enabling remote desktop.
+- System Administration: Installing and configuring operating systems (Windows 10, Windows Server, Ubuntu, and Kali Linux) on virtual machines. Adding & managing user accounts, permissions, and group policies such as resetting passwords, account lockout, auto-updates, and enabling remote desktop.
 
 ### Tools Used
 
@@ -91,47 +91,68 @@ The server will require a restart once the installation has been finished.
 Open up Server Manager. Click the tools tab at the top and select active directory users and computers.
 Right-click the domain `domain.test` and select new, then Organizational Unit as this mimics real-world departments. 
 <img src="https://i.imgur.com/UEXlO8r.png" width="500"> <img src="https://i.imgur.com/Ps4QKEq.png" width="370">
-<img src="https://i.imgur.com/8435dDA.png" width="400"> <br> <sup>Ref 14: Creation of new Organizational Unit called IT </sup>	 
+<img src="https://i.imgur.com/8435dDA.png" width="400"> <br> <sup>Ref 13: Creation of new Organizational Unit called IT </sup>	 
 
 **Create new users within IT** <br>
 Click IT OU and right-click to add a new user. Here you will fill out the information based on the user such as their first & last name and their login information 
 
 <img src="https://i.imgur.com/h4uzGuh.png" width="400"><img src="https://i.imgur.com/S38TCAD.png" width="400">
-<img src="https://i.imgur.com/uDsHmvJ.png" width="400"> <br> <sup>Ref 15: User being added to the OU of IT  </sup>	
+<img src="https://i.imgur.com/uDsHmvJ.png" width="400"> <br> <sup>Ref 14: User being added to the OU of IT  </sup>	
+
+**Windows 10 joins Windows Server Domain** <br>
+On the Windows 10 VM right-click the Windows icon at the bottom left and click on system. Scroll down to Advance System Settings. <br>
+Go to the computer name tab and click the box that says change. Click the radio button for Domain and type the domain in.
+
+<img src="https://i.imgur.com/nNxokCC.png" width="500"><br> <sup>Ref 15: Join domain  </sup>	
+
+**Log on to the domain using a user account** <br>
+When you sign on it points to the domain we have created.`DOMAIN`
+
+<img src="https://i.imgur.com/3xuqS37.png" width="270"> <img src="https://i.imgur.com/DBeIxAB.png" width="300"> <br> <sup>Ref 16: Sign in to the domain with the user that has been created  </sup>	
 
 **User Password Reset** <br>
-Right-click the user and select reset password. It will prompt you to create a new password, Check the box to make the user change to a password of their choice the next time they log in. 
+Location the user within the domain, right-click the user and select reset password. It will prompt you to create a new password, Check the box to make the user change to a password of their choice the next time they log in. 
 
-<img src="https://i.imgur.com/JZcIlv7.png" width="500"><img src="https://i.imgur.com/84sLwCA.png" width="300"> <br> <sup>Ref 16: Resetting user password </sup>	
+<img src="https://i.imgur.com/JZcIlv7.png" width="500"><img src="https://i.imgur.com/84sLwCA.png" width="300"> <br> <sup>Ref 17: Resetting user password </sup>	
+
+If you don't know where the user is located you can use search. Right-click the domain and select find. 
+
+<img src="https://i.imgur.com/EYTIU48.png" width="500"><img src="https://i.imgur.com/C0J8oSu.png" width="500"> <br> <sup>Ref 18: Searching for user & resetting user password </sup>	
 
 **Account lockout** <br>
 Open up Server Manager. Click the tools at the top and group policy management.
 
-<img src="https://i.imgur.com/dWjAnS8.png" width="600"> <br> <sup>Ref 17: Group policy management  </sup>	
+<img src="https://i.imgur.com/dWjAnS8.png" width="600"> <br> <sup>Ref 19: Group policy management  </sup>	
 
 Under the domain right-click default domain policy and click edit. <br>
 Navigate to Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy.<br>
 Right-click account lockout threshold and select properties. Here is where you can edit the number of times wrong login attempts can occur before the account is locked out.
 
-<img src="https://i.imgur.com/DZnf3hR.png" width="400"><img src="https://i.imgur.com/gODrk7m.png" width="500"><br> <sup>Ref 18: Domain policy for account lockout </sup>	
+<img src="https://i.imgur.com/DZnf3hR.png" width="400"><img src="https://i.imgur.com/gODrk7m.png" width="500"><br> <sup>Ref 20: Domain policy for account lockout </sup>	
+	
+**Group Policy Objects** <br>
+Right-click the OU. Click create a GPO in this domain. Right-click the new GPO and select edit 
 
-**Windows 10 joins Windows Server Domain** <br>
-On the Windows 10 VM right click the Windows icon at the bottom left and click on system. Scroll down to Advance System Settings. <br>
-Go to the computer name tab and click the box that says change. Click the radio button for Domain and type the domain in.
+<img src="https://i.imgur.com/kmx6KPj.png" width="400"><img src="https://i.imgur.com/00yfIDq.png" width="500"><br> <sup>Ref 21: Domain policy for account lockout </sup>	
 
-<img src="https://i.imgur.com/nNxokCC.png" width="500"><br> <sup>Ref 19: Join domain  </sup>	
+**Configure Automatic Updates** <br>
+Locate computer configurations. Policies> administrative templates> Windows components> Windows update>  click on “configure automatic updates”. Click the enabled radio button towards the bottom to configure automatic updating. Selection option 4 in the dropdown box. Add a time frame and press apply. 
 
-**Log on to the domain using a user account** <br>
-When you sign on it points to the domain we have created.`DOMAIN`
+<img src="https://i.imgur.com/RakHjPu.png" width="400"><img src="https://i.imgur.com/VGICa4v.png" width="350"><br> <sup>Ref 22: Automatic updates to occur at a specific time </sup>	
 
-<img src="https://i.imgur.com/3xuqS37.png" width="270"> <img src="https://i.imgur.com/DBeIxAB.png" width="300"> <br> <sup>Ref 20: Sign in to the domain with the user that has been created  </sup>	
+**Configure Policy for Users** <br>
+Locate user configurations. Policies> administrative templates> all settings. Click on prohibit deleting items. 
 
-**Allowing remote desktop connection for users** <br>
-On the Windows 10 VM right click the Windows icon at the bottom left and click on system. Scroll down to Advance System Settings, go to the remote tab, and click the checkbox and radio button at the bottom that says allow remote connections to this computer.
+<img src="https://i.imgur.com/MFJ7Qpr.png" width="600"> <br> <sup>Ref 23: GPO for User </sup>	
+
+For the changes to apply, Open the command prompt and run `gpupdate /force` <br>
+<img src="https://i.imgur.com/sDxaVtz.png" width="400"> <br> <sup>Ref 24: Apply changes </sup>	
+
+**Allowing Remote Desktop Connection for Users** <br>
+On the Windows 10 VM right-click the Windows icon at the bottom left and click on system. Scroll down to Advance System Settings, go to the remote tab, and click the checkbox and radio button at the bottom that says allow remote connections to this computer.
 Click select users and at the bottom dialog box type the users or groups to add to be able to remote to this computer, then click check names and press ok. 
 
-<img src="https://i.imgur.com/zCSbpBF.png" width="450"> <img src="https://i.imgur.com/THEXe6W.png" width="450"> <br> <sup>Ref 21: Enabling RDP for users </sup>	 
-
+<img src="https://i.imgur.com/zCSbpBF.png" width="450"> <img src="https://i.imgur.com/THEXe6W.png" width="450"> <br> <sup>Ref 25: Enabling RDP for users </sup>	 
 
 ## Issues
 **Setting static IP for Ubuntu VM** <br>
@@ -139,11 +160,11 @@ When trying to set a static ip for the Ubuntu machine the guide had a different 
 
 As I've now learned that the format has to be exact for each Ubuntu version as the guide was running an older Ubuntu version. I obtained the format from <a href="https://Linuxconfig.org/setting-a-static-ip-address-in-ubuntu-24-04-via-the-command-line">here</a> to correctly configure the IP.
 
-<img src="https://i.imgur.com/orlYUfn.png" width="460"> <img src="https://i.imgur.com/8NVBgYI.png" width="480"> <br> <sup>Ref 22: Netplan guide IP format </sup> <br> <sup>Ref 23: Netplan IP format that worked for Ubuntu24.04 </sup>	
+<img src="https://i.imgur.com/orlYUfn.png" width="460"> <img src="https://i.imgur.com/8NVBgYI.png" width="480"> <br> <sup>Ref 26: Netplan guide IP format </sup> <br> <sup>Ref 27: Netplan IP format that worked for Ubuntu24.04 </sup>	
 
 **Windows 10 joining the Windows server domain due to DNS configuration** <br>
 Press the `Windows key + R` to open up run. Type in `ncpa.cpl` and press ok. Then right-click and go into properties, click Internet Protocol Version 4. Change the DNS to point at the domain controller `192.168.10.7`.
 
-<img src="https://i.imgur.com/Wpk3Z0v.png" width="380"> <img src="https://i.imgur.com/ZRI4ds9.png" width="280"> <br> <sup>Ref 24: Issue with DNS  </sup>	
+<img src="https://i.imgur.com/Wpk3Z0v.png" width="380"> <img src="https://i.imgur.com/ZRI4ds9.png" width="280"> <br> <sup>Ref 28: Issue with DNS  </sup>	
 
 -------------------------------------------------------------------
