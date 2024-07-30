@@ -115,7 +115,7 @@ Location the user within the domain, right-click the user and select reset passw
 
 <img src="https://i.imgur.com/JZcIlv7.png" width="500"><img src="https://i.imgur.com/84sLwCA.png" width="300"> <br> <sup>Ref 17: Resetting user password </sup>	
 
-If you don't know where the user is located you can use search. Right-click the domain and select find. 
+You can search for the user if you don't know where the user is located. Right-click the domain and select find. 
 
 <img src="https://i.imgur.com/EYTIU48.png" width="400"><img src="https://i.imgur.com/C0J8oSu.png" width="400"> <br> <sup>Ref 18: Searching for user & resetting user password </sup>	
 
@@ -128,31 +128,36 @@ Under the domain right-click default domain policy and click edit. <br>
 Navigate to Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy.<br>
 Right-click account lockout threshold and select properties. Here is where you can edit the number of times wrong login attempts can occur before the account is locked out.
 
-<img src="https://i.imgur.com/DZnf3hR.png" width="400"><img src="https://i.imgur.com/gODrk7m.png" width="500"><br> <sup>Ref 20: Domain policy for account lockout </sup>	
+<img src="https://i.imgur.com/DZnf3hR.png" width="400"><img src="https://i.imgur.com/gODrk7m.png" width="500"><br> <sup>Ref 20: Domain policy for account lockout </sup>
+
+**Unlock Account** <br>
+Location the user within the domain, right-click the user and select properties. Go to the account tab and find the checkbox to unlock the user account. 
+
+<img src="https://i.imgur.com/lrZw3la.png" width="300"> <br> <sup>Ref 21: User Properties to unlock account </sup>	
 	
 **Group Policy Objects** <br>
 Right-click the OU. Click create a GPO in this domain. Right-click the new GPO and select edit 
 
-<img src="https://i.imgur.com/kmx6KPj.png" width="400"><img src="https://i.imgur.com/00yfIDq.png" width="500"><br> <sup>Ref 21: Domain policy for account lockout </sup>	
+<img src="https://i.imgur.com/kmx6KPj.png" width="400"><img src="https://i.imgur.com/00yfIDq.png" width="500"><br> <sup>Ref 22: Domain policy for account lockout </sup>	
 
 **Configure Automatic Updates** <br>
 Locate computer configurations. Policies> administrative templates> Windows components> Windows update>  click on “configure automatic updates”. Click the enabled radio button towards the bottom to configure automatic updating. Selection option 4 in the dropdown box. Add a time frame and press apply. 
 
-<img src="https://i.imgur.com/RakHjPu.png" width="400"><img src="https://i.imgur.com/VGICa4v.png" width="350"><br> <sup>Ref 22: Automatic updates to occur at a specific time </sup>	
+<img src="https://i.imgur.com/RakHjPu.png" width="400"><img src="https://i.imgur.com/VGICa4v.png" width="350"><br> <sup>Ref 23: Automatic updates to occur at a specific time </sup>	
 
 **Configure Policy for Users** <br>
 Locate user configurations. Policies> administrative templates> all settings. Click on prohibit deleting items. 
 
-<img src="https://i.imgur.com/MFJ7Qpr.png" width="600"> <br> <sup>Ref 23: GPO for User </sup>	
+<img src="https://i.imgur.com/MFJ7Qpr.png" width="600"> <br> <sup>Ref 24: GPO for User </sup>	
 
 For the changes to apply, Open the command prompt and run `gpupdate /force` <br>
-<img src="https://i.imgur.com/sDxaVtz.png" width="400"> <br> <sup>Ref 24: Apply changes </sup>	
+<img src="https://i.imgur.com/sDxaVtz.png" width="400"> <br> <sup>Ref 25: Apply changes </sup>	
 
 **Allowing Remote Desktop Connection for Users** <br>
 On the Windows 10 VM right-click the Windows icon at the bottom left and click on system. Scroll down to Advance System Settings, go to the remote tab, and click the checkbox and radio button at the bottom that says allow remote connections to this computer.
 Click select users and at the bottom dialog box type the users or groups to add to be able to remote to this computer, then click check names and press ok. 
 
-<img src="https://i.imgur.com/zCSbpBF.png" width="450"> <img src="https://i.imgur.com/THEXe6W.png" width="450"> <br> <sup>Ref 25: Enabling RDP for users </sup>	 
+<img src="https://i.imgur.com/zCSbpBF.png" width="450"> <img src="https://i.imgur.com/THEXe6W.png" width="450"> <br> <sup>Ref 26: Enabling RDP for users </sup>	 
 
 ## Issues
 **Setting static IP for Ubuntu VM** <br>
@@ -160,11 +165,11 @@ When trying to set a static ip for the Ubuntu machine the guide had a different 
 
 As I've now learned that the format has to be exact for each Ubuntu version as the guide was running an older Ubuntu version. I obtained the format from <a href="https://Linuxconfig.org/setting-a-static-ip-address-in-ubuntu-24-04-via-the-command-line">here</a> to correctly configure the IP.
 
-<img src="https://i.imgur.com/orlYUfn.png" width="460"> <img src="https://i.imgur.com/8NVBgYI.png" width="480"> <br> <sup>Ref 26: Netplan guide IP format </sup> <br> <sup>Ref 27: Netplan IP format that worked for Ubuntu24.04 </sup>	
+<img src="https://i.imgur.com/orlYUfn.png" width="460"> <img src="https://i.imgur.com/8NVBgYI.png" width="480"> <br> <sup>Ref 27: Netplan guide IP format </sup> <br> <sup>Ref 28: Netplan IP format that worked for Ubuntu24.04 </sup>	
 
 **Windows 10 joining the Windows server domain due to DNS configuration** <br>
 Press the `Windows key + R` to open up run. Type in `ncpa.cpl` and press ok. Then right-click and go into properties, click Internet Protocol Version 4. Change the DNS to point at the domain controller `192.168.10.7`.
 
-<img src="https://i.imgur.com/Wpk3Z0v.png" width="380"> <img src="https://i.imgur.com/ZRI4ds9.png" width="280"> <br> <sup>Ref 28: Issue with DNS  </sup>	
+<img src="https://i.imgur.com/Wpk3Z0v.png" width="380"> <img src="https://i.imgur.com/ZRI4ds9.png" width="280"> <br> <sup>Ref 29: Issue with DNS  </sup>	
 
 -------------------------------------------------------------------
