@@ -157,7 +157,7 @@ For the changes to apply, Open the command prompt and run `gpupdate /force` <br>
 On the Windows 10 VM right-click the Windows icon at the bottom left and click on system. Scroll down to Advance System Settings, go to the remote tab, and click the checkbox and radio button at the bottom that says allow remote connections to this computer.
 Click select users and at the bottom dialog box type the users or groups to add to be able to remote to this computer, then click check names and press ok. 
 
-<img src="https://i.imgur.com/zCSbpBF.png" width="450"> <img src="https://i.imgur.com/THEXe6W.png" width="450"> <br> <sup>Ref 26: Enabling RDP for users </sup>	 
+<img src="https://i.imgur.com/zCSbpBF.png" width="350"> <img src="https://i.imgur.com/THEXe6W.png" width="350"> <br> <sup>Ref 26: Enabling RDP for users </sup>	 
 
 ## Issues
 **Setting static IP for Ubuntu VM** <br>
