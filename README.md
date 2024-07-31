@@ -90,14 +90,13 @@ The server will require a restart once the installation has been finished.
 **Create a new Organizational Unit called IT** <br>
 Open up Server Manager. Click the tools tab at the top and select active directory users and computers.
 Right-click the domain `domain.test` and select new, then Organizational Unit as this mimics real-world departments. 
-<img src="https://i.imgur.com/UEXlO8r.png" width="500"> <img src="https://i.imgur.com/Ps4QKEq.png" width="370">
-<img src="https://i.imgur.com/8435dDA.png" width="400"> <br> <sup>Ref 13: Creation of new Organizational Unit called IT </sup>	 
+<img src="https://i.imgur.com/UEXlO8r.png" width="600"> 
+<img src="https://i.imgur.com/Ps4QKEq.png" width="430"> <img src="https://i.imgur.com/8435dDA.png" width="380" height="300" > <br> <sup>Ref 13: Creation of new Organizational Unit called IT </sup>	 
 
 **Create new users within IT** <br>
 Click IT OU and right-click to add a new user. Here you will fill out the information based on the user such as their first & last name and their login information 
 
-<img src="https://i.imgur.com/h4uzGuh.png" width="400"><img src="https://i.imgur.com/S38TCAD.png" width="400">
-<img src="https://i.imgur.com/uDsHmvJ.png" width="400"> <br> <sup>Ref 14: User being added to the OU of IT  </sup>	
+<img src="https://i.imgur.com/h4uzGuh.png" width="400"><img src="https://i.imgur.com/S38TCAD.png" width="400"> <br> <sup>Ref 14: User being added to the OU of IT  </sup>	
 
 **Windows 10 joins Windows Server Domain** <br>
 On the Windows 10 VM right-click the Windows icon at the bottom left and click on system. Scroll down to Advance System Settings. <br>
@@ -108,7 +107,7 @@ Go to the computer name tab and click the box that says change. Click the radio 
 **Log on to the domain using a user account** <br>
 When you sign on it points to the domain we have created.`DOMAIN`
 
-<img src="https://i.imgur.com/3xuqS37.png" width="270"> <img src="https://i.imgur.com/DBeIxAB.png" width="300"> <br> <sup>Ref 16: Sign in to the domain with the user that has been created  </sup>	
+<img src="https://i.imgur.com/3xuqS37.png" width="270"> <img src="https://i.imgur.com/DBeIxAB.png" width="270" height="265"> <br> <sup>Ref 16: Sign in to the domain with the user that has been created  </sup>	
 
 **User Password Reset** <br>
 Location the user within the domain, right-click the user and select reset password. It will prompt you to create a new password, Check the box to make the user change to a password of their choice the next time they log in. 
@@ -143,7 +142,7 @@ Right-click the OU. Click create a GPO in this domain. Right-click the new GPO a
 **Configure Automatic Updates** <br>
 Locate computer configurations. Policies> administrative templates> Windows components> Windows update>  click on “configure automatic updates”. Click the enabled radio button towards the bottom to configure automatic updating. Selection option 4 in the dropdown box. Add a time frame and press apply. 
 
-<img src="https://i.imgur.com/RakHjPu.png" width="400"><img src="https://i.imgur.com/VGICa4v.png" width="350"><br> <sup>Ref 23: Automatic updates to occur at a specific time </sup>	
+<img src="https://i.imgur.com/RakHjPu.png" width="400"><img src="https://i.imgur.com/VGICa4v.png" width="350" height="300"><br> <sup>Ref 23: Automatic updates to occur at a specific time </sup>	
 
 **Configure Policy for Users** <br>
 Locate user configurations. Policies> administrative templates> all settings. Click on prohibit deleting items. 
@@ -165,7 +164,7 @@ When trying to set a static ip for the Ubuntu machine the guide had a different 
 
 As I've now learned that the format has to be exact for each Ubuntu version as the guide was running an older Ubuntu version. I obtained the format from <a href="https://Linuxconfig.org/setting-a-static-ip-address-in-ubuntu-24-04-via-the-command-line">here</a> to correctly configure the IP.
 
-<img src="https://i.imgur.com/orlYUfn.png" width="460"> <img src="https://i.imgur.com/8NVBgYI.png" width="480"> <br> <sup>Ref 27: Netplan guide IP format </sup> <br> <sup>Ref 28: Netplan IP format that worked for Ubuntu24.04 </sup>	
+<img src="https://i.imgur.com/orlYUfn.png" width="460"> <img src="https://i.imgur.com/8NVBgYI.png" width="480" height="220"> <br> <sup>Ref 27: Netplan guide IP format </sup> <br> <sup>Ref 28: Netplan IP format that worked for Ubuntu24.04 </sup>	
 
 **Windows 10 joining the Windows server domain due to DNS configuration** <br>
 Press the `Windows key + R` to open up run. Type in `ncpa.cpl` and press ok. Then right-click and go into properties, click Internet Protocol Version 4. Change the DNS to point at the domain controller `192.168.10.7`.
